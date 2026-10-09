@@ -1,0 +1,461 @@
+{
+  "manifest": "HospiCore — Agent Skills (skills.sh)",
+  "version": "1.0.0",
+  "date": "2026-10-09",
+  "source": "https://skills.sh/",
+  "installTool": "npx skills add <owner/repo>",
+  "note": "Skills = capacités réutilisables (SKILL.md) pour agents de codage (Claude Code, Cursor, Codex, Copilot, Windsurf, etc.). Revue CISO/CTO requise avant usage. Aucun skill ne doit traiter de PHI réelles.",
+  "categories": {
+    "clinical-fhir": {
+      "description": "Cœur clinique : FHIR R4, HL7, terminologies (ICD-10-CA, SNOMED CT, LOINC, RxNorm, CVX, CCI)",
+      "skills": [
+        {
+          "name": "fhir-developer-skill (+ fhir)",
+          "repo": "anthropics/healthcare",
+          "url": "https://skills.sh/anthropics/healthcare/fhir-developer-skill",
+          "install": "npx skills add anthropics/healthcare",
+          "use": "Endpoints FHIR R4 (Patient, Observation, Encounter, Condition, MedicationRequest), validation, SMART on FHIR, Bundles, LOINC/SNOMED/RxNorm/ICD-10"
+        },
+        {
+          "name": "clinical-note-extract-skill",
+          "repo": "anthropics/healthcare",
+          "url": "https://skills.sh/anthropics/healthcare",
+          "install": "npx skills add anthropics/healthcare",
+          "use": "Extraction entités cliniques (scribe IA)"
+        },
+        {
+          "name": "icd10-cm-skill / procedure-coding / prior-auth-review-skill / fraud-detection / doc-extract / contracts / clinical-trial-protocol-skill",
+          "repo": "anthropics/healthcare",
+          "url": "https://skills.sh/anthropics/healthcare",
+          "install": "npx skills add anthropics/healthcare",
+          "use": "Codage, facturation, fraude, documents, recherche (10 skills au total)"
+        },
+        {
+          "name": "hcls-agent-skills (41 skills : clinical-data-standards, ehr-data-parsing, claims-billing-rules, claims-analytics, risk-adjustment, pa-clinical-policy, pa-decision-automation, hedis-measure-specification, quality-measures, risk-stratification-indices, provider-denial-workup, coordination-of-benefits, genomics, imaging, drug-discovery…)",
+          "repo": "awslabs/hcls-agent-skills",
+          "url": "https://github.com/awslabs/hcls-agent-skills",
+          "install": "npx skills add awslabs/hcls-agent-skills",
+          "use": "Standards cliniques, parsing HL7v2/FHIR, claims X12 837/835, mesures qualité HEDIS, stratification risque (13 domaines HCLS)"
+        },
+        {
+          "name": "health-skills (19 skills : health-fhir-api-design, health-fhir-modeling, health-human-factors, health-compliance-review, health-hipaa-review, health-hipaa-secure-delivery, health-docs, health-init, health-refactor, health-product-discovery, health-project-context, openspec-*)",
+          "repo": "reason-healthcare/health-skills",
+          "url": "https://skills.sh/reason-healthcare/health-skills",
+          "install": "npx skills add reason-healthcare/health-skills",
+          "use": "Design & modélisation API FHIR, facteurs humains (sécurité patient), revues conformité/HIPAA, gestion des changements (OpenSpec)"
+        },
+        {
+          "name": "open-medical-skills (49 skills : hipaa-compliance-checker, lab-result-interpreter, icd10-code-lookup, cpt-coding-assistant, clinical-differential-diagnosis, evidence-synthesis-ai, dicom-metadata-extractor, phq9-depression-screening, pubmed-literature-search, patient-assessment-tool, outbreak-investigation, fda-510k-documentation…)",
+          "repo": "open-medica/open-medical-skills",
+          "url": "https://skills.sh/open-medica/open-medical-skills",
+          "install": "npx skills add open-medica/open-medical-skills",
+          "use": "Vérification conformité HIPAA, interprétation labos, échelles cliniques, imagerie DICOM, aide décision (Phases 2-4)"
+        },
+        {
+          "name": "agent-skills (6 skills : fhir-ig-analysis, fhir-ig-translation, mii-ig-migration, skill-authoring…)",
+          "repo": "forschungsgruppe-digital-health/agent-skills",
+          "url": "https://skills.sh/forschungsgruppe-digital-health/agent-skills",
+          "install": "npx skills add forschungsgruppe-digital-health/agent-skills",
+          "use": "Guides d'implémentation FHIR (profils nationaux, migration IG, DSQ)"
+        },
+        {
+          "name": "OpenClaw Medical Skills (ehr-fhir-integration, fhir-development, clinical-note-summarization, clinical-nlp-extractor, drug-interaction-checker, lab-results, wearable-analysis-agent, digital-twin-clinical-agent, trial-eligibility-agent, care-coordination, claims-appeals, prior-auth-coworker, regulatory-drafter, biomedical-data-analysis, multimodal-medical-imaging…)",
+          "repo": "FreedomIntelligence/OpenClaw-Medical-Skills",
+          "url": "https://github.com/FreedomIntelligence/OpenClaw-Medical-Skills",
+          "install": "git clone https://github.com/FreedomIntelligence/OpenClaw-Medical-Skills.git",
+          "use": "Plus grande bibliothèque open-source de skills médicaux IA (scribe, interactions médicamenteuses, IoT/wearables, analytique)"
+        }
+      ]
+    },
+    "security-compliance": {
+      "description": "Conformité Loi 25 / HIPAA / ISO 27001 / SOC 2, sécurité applicative et infrastructure",
+      "skills": [
+        {
+          "name": "compliance-engineering",
+          "repo": "travisjneuman/.claude/compliance-engineering",
+          "url": "https://agent-skills.md/skills/travisjneuman/.claude/compliance-engineering",
+          "install": "npx skills add travisjneuman/.claude/compliance-engineering",
+          "use": "Implémentation SOC2/HIPAA/GDPR/PCI-DSS/FedRAMP en code : audit logging immuable, chiffrement, accès, privacy by design"
+        },
+        {
+          "name": "compliance-testing",
+          "repo": "proffesor-for-testing/agentic-qe",
+          "url": "https://agent-skills.md/skills/proffesor-for-testing/agentic-qe/compliance-testing",
+          "install": "npx skills add proffesor-for-testing/agentic-qe",
+          "use": "Tests conformité réglementaire (GDPR, CCPA, HIPAA, SOC2), droits des personnes, preuves audit"
+        },
+        {
+          "name": "security-and-hardening",
+          "repo": "addyosmani/agent-skills",
+          "url": "https://github.com/addyosmani/agent-skills/blob/main/skills/security-and-hardening/SKILL.md",
+          "install": "npx skills add addyosmani/agent-skills",
+          "use": "Threat modeling (STRIDE), checklist sécurité (auth, input, données, infra, supply chain, AI/LLM)"
+        },
+        {
+          "name": "api-security-best-practices",
+          "repo": "sickn33/antigravity-awesome-skills",
+          "url": "https://skills.sh/sickn33/antigravity-awesome-skills/api-security-best-practices",
+          "install": "npx skills add sickn33/antigravity-awesome-skills",
+          "use": "Sécurisation API (auth, autorisation objet, validation, rate limiting)"
+        },
+        {
+          "name": "security-audit",
+          "repo": "netresearch/security-audit-skill",
+          "url": "https://github.com/netresearch/security-audit-skill",
+          "install": "npx skills add netresearch/security-audit-skill",
+          "use": "Audit sécurité OWASP Top 10 / CWE Top 25 / ASVS 4.0, SAST, supply chain (SLSA), hooks CI"
+        },
+        {
+          "name": "hipaa-compliance-guardrails (Claude Code)",
+          "repo": "mcpmarket (HIPAA Compliance Guardrails)",
+          "url": "https://mcpmarket.com/tools/skills/hipaa-compliance-guardrails",
+          "install": "via marketplace / dépôt référencé",
+          "use": "Garde-fous HIPAA : 18 identifiants, AES-256, logs 6 ans, jamais de PHI vers un LLM"
+        },
+        {
+          "name": "devops-security-agent-skills (163 skills : windows-hardening, container-hardening, kubernetes-hardening, audit-logging, gdpr-compliance, penetration-testing, incident-response, disaster-recovery, cis-benchmarks, policy-as-code, sast-scanning, waf-setup, ssl-tls-management, vulnerability-scanning, database-backups, github-actions, terraform-aws/gcp/azure, kubernetes-ops, backup-recovery, git-workflow…)",
+          "repo": "bagelhole/devops-security-agent-skills",
+          "url": "https://skills.sh/bagelhole/devops-security-agent-skills",
+          "install": "npx skills add bagelhole/devops-security-agent-skills",
+          "use": "Sécurité infrastructure & DevSecOps (hardening Windows/K8s/conteneurs, WAF, pen-test, PRA, IaC)"
+        },
+        {
+          "name": "mobile-security / offline-first / mobile-security-review / encryption",
+          "repo": "ahmed3elshaer/everything-claude-code-mobile ; tinh2/skills-hub-registry",
+          "url": "https://skills.sh/ahmed3elshaer/everything-claude-code-mobile ; https://skills.sh/tinh2/skills-hub-registry",
+          "install": "npx skills add ahmed3elshaer/everything-claude-code-mobile ; npx skills add tinh2/skills-hub-registry",
+          "use": "Sécurité mobile (Keystore, chiffrement local), revue sécurité mobile, offline-first"
+        }
+      ]
+    },
+    "windows-winui": {
+      "description": "Client Windows : WinUI 3 / Windows App SDK (Fluent Design, Windows 10 2004+ / Windows 11), packaging MSIX",
+      "skills": [
+        {
+          "name": "win-dev-skills (9 skills : winui-design, winui-dev-workflow, winui-code-review, winui-ui-testing, winui-setup, winui-packaging, pr-review, winui-wpf-migration, winui-session-report)",
+          "repo": "microsoft/win-dev-skills",
+          "url": "https://skills.sh/microsoft/win-dev-skills",
+          "install": "npx skills add microsoft/win-dev-skills",
+          "use": "OFFICIEL Microsoft : design WinUI 3, workflow, revue, tests UI, setup, packaging MSIX"
+        },
+        {
+          "name": "winui-app (+ skill-creator)",
+          "repo": "openai/skills",
+          "url": "https://skills.sh/openai/skills/winui-app",
+          "install": "npx skills add openai/skills",
+          "use": "Bootstrap app WinUI 3 (Windows App SDK), décisions UX Windows modernes, WinUI Gallery, CommunityToolkit"
+        },
+        {
+          "name": "winui3-full-skill",
+          "repo": "sudocode76/winui3-skills",
+          "url": "https://skills.sh/sudocode76/winui3-skills",
+          "install": "npx skills add sudocode76/winui3-skills",
+          "use": "Skill WinUI 3 complet (38 références)"
+        },
+        {
+          "name": "dotnet-skills (167 skills : dotnet-winui, dotnet-msix, dotnet-cryptography, dotnet-secrets-management, asp-net-core-identity-patterns, rate-limiting, dotnet-structured-logging, dotnet-efcore-architecture, dotnet-minimal-apis…)",
+          "repo": "wshaddix/dotnet-skills",
+          "url": "https://skills.sh/wshaddix/dotnet-skills",
+          "install": "npx skills add wshaddix/dotnet-skills",
+          "use": "Écosystème .NET (Windows + backend)"
+        },
+        {
+          "name": "dotnet-skills (290 skills : aspnet-core, entity-framework-core, minimal-apis, signalr, web-api, xunit, archunitnet, quality-ci, blazor…)",
+          "repo": "managedcode/dotnet-skills",
+          "url": "https://skills.sh/managedcode/dotnet-skills",
+          "install": "npx skills add managedcode/dotnet-skills",
+          "use": "Backend ASP.NET Core, EF Core, tests, qualité, CI"
+        },
+        {
+          "name": "dotnet-artisan (135 skills : dotnet-winui, dotnet-accessibility, dotnet-localization, dotnet-observability, dotnet-msix, dotnet-structured-logging, dotnet-secrets-management, dotnet-efcore-architecture, dotnet-api…)",
+          "repo": "novotnyllc/dotnet-artisan",
+          "url": "https://skills.sh/novotnyllc/dotnet-artisan",
+          "install": "npx skills add novotnyllc/dotnet-artisan",
+          "use": ".NET artisan : UI, API, accessibilité, localisation (fr/en), packaging"
+        }
+      ]
+    },
+    "android-compose": {
+      "description": "Client Android : Kotlin / Jetpack Compose / Material 3 (Material You), cible Android 17 (API 37)",
+      "skills": [
+        {
+          "name": "mobile-android-design",
+          "repo": "wshobson/agents",
+          "url": "https://skills.sh/wshobson/agents/mobile-android-design",
+          "install": "npx skills add wshobson/agents",
+          "use": "Material Design 3 (Material You) + Jetpack Compose : composants, theming dynamique, navigation, adaptatif, accessibilité"
+        },
+        {
+          "name": "android-agent-skills (34 skills : android-material3-design-system, android-compose-foundations, android-compose-accessibility, android-security-best-practices, android-room-database, android-local-persistence-datastore, android-serialization-offline-sync, android-workmanager-notifications, android-ci-cd-release-playstore, android-architecture-clean, android-networking-retrofit-okhttp, android-testing-unit/ui, android-emulator-automation, android-performance-observability…)",
+          "repo": "krutikjain/android-agent-skills",
+          "url": "https://skills.sh/krutikjain/android-agent-skills",
+          "install": "npx skills add krutikjain/android-agent-skills",
+          "use": "Android moderne complet (Material 3, sécurité, Room, offline-sync, release Play Store, clean architecture)"
+        },
+        {
+          "name": "compose-skill (jetpack-compose, compose-expert)",
+          "repo": "aldefy/compose-skill",
+          "url": "https://skills.sh/aldefy/compose-skill",
+          "install": "npx skills add aldefy/compose-skill",
+          "use": "Expertise Jetpack Compose"
+        },
+        {
+          "name": "material-3-skill (material-3) ; compose_skill (jetpack-compose-audit, compose-agent)",
+          "repo": "hamen/material-3-skill ; hamen/compose_skill",
+          "url": "https://skills.sh/hamen",
+          "install": "npx skills add hamen/material-3-skill ; npx skills add hamen/compose_skill",
+          "use": "Material 3, audit Compose"
+        },
+        {
+          "name": "android-studio / android-sdk / jetpack-compose / materialui",
+          "repo": "g1joshi/agent-skills",
+          "url": "https://skills.sh/g1joshi/agent-skills",
+          "install": "npx skills add g1joshi/agent-skills",
+          "use": "Outils Android Studio/SDK, Compose, Material UI (356 skills au total)"
+        }
+      ]
+    },
+    "web-frontend": {
+      "description": "Web : React 19 + TypeScript (PWA portail patient & console admin), accessibilité WCAG 2.2",
+      "skills": [
+        {
+          "name": "frontend-design",
+          "repo": "anthropics/skills",
+          "url": "https://skills.sh/anthropics/skills/frontend-design",
+          "install": "npx skills add anthropics/skills",
+          "use": "Design frontend distinctif (OFFICIEL Anthropic)"
+        },
+        {
+          "name": "react-frontend-expert",
+          "repo": "hieutrtr/ai1-skills",
+          "url": "https://skills.sh/hieutrtr/ai1-skills/react-frontend-expert",
+          "install": "npx skills add hieutrtr/ai1-skills",
+          "use": "React 19/TS strict, hooks, TanStack Query, formulaires, WCAG 2.1 AA intégré"
+        },
+        {
+          "name": "frontend-developer",
+          "repo": "sickn33/antigravity-awesome-skills",
+          "url": "https://skills.sh/sickn33/antigravity-awesome-skills/frontend-developer",
+          "install": "npx skills add sickn33/antigravity-awesome-skills",
+          "use": "React/Next.js, perf, accessibilité, state, data fetching"
+        },
+        {
+          "name": "web-accessibility",
+          "repo": "supercent-io/skills-template",
+          "url": "https://skills.sh/supercent-io/skills-template/web-accessibility",
+          "install": "npx skills add supercent-io/skills-template",
+          "use": "WCAG 2.1 : HTML sémantique, clavier, ARIA, contraste, tests axe-core/Lighthouse"
+        },
+        {
+          "name": "accessibility-compliance",
+          "repo": "wshobson/agents",
+          "url": "https://skills.sh/wshobson/agents/accessibility-compliance",
+          "install": "npx skills add wshobson/agents",
+          "use": "WCAG 2.2 A/AA/AAA, ratios contraste, cibles 44x44, patterns accessibles"
+        }
+      ]
+    },
+    "backend-architecture": {
+      "description": "Backend .NET 9 / ASP.NET Core, données, architecture (Clean/Hexagonal/DDD)",
+      "skills": [
+        {
+          "name": "dotnet-backend / dotnet-architect / dotnet-backend-patterns",
+          "repo": "sickn33/antigravity-awesome-skills",
+          "url": "https://skills.sh/sickn33/agentic-awesome-skills/dotnet-backend",
+          "install": "npx skills add sickn33/antigravity-awesome-skills",
+          "use": "ASP.NET Core 8/9 enterprise, EF Core, auth, workers, patterns production"
+        },
+        {
+          "name": "autoskills (aspnet-core, aspnet-minimal-api-openapi, containerize-aspnetcore, csharp-xunit, csharp-async, dotnet-best-practices…)",
+          "repo": "midudev/autoskills",
+          "url": "https://skills.sh/midudev/autoskills",
+          "install": "npx skills add midudev/autoskills",
+          "use": "ASP.NET Core, OpenAPI, conteneurisation, tests"
+        },
+        {
+          "name": "prisma skills (9) + cursor-plugin (40)",
+          "repo": "prisma/skills ; prisma/cursor-plugin",
+          "url": "https://skills.sh/prisma/skills",
+          "install": "npx skills add prisma/skills ; npx skills add prisma/cursor-plugin",
+          "use": "ORM Prisma / PostgreSQL (couche outils/admin si Node)"
+        },
+        {
+          "name": "architecture-patterns",
+          "repo": "wshobson/agents",
+          "url": "https://skills.sh/wshobson/agents/architecture-patterns",
+          "install": "npx skills add wshobson/agents",
+          "use": "Clean Architecture, Hexagonal, DDD (bounded contexts, agrégats, value objects, événements)"
+        },
+        {
+          "name": "clean-ddd-hexagonal",
+          "repo": "ccheney/robust-skills",
+          "url": "https://skills.sh/ccheney/robust-skills/clean-ddd-hexagonal",
+          "install": "npx skills add ccheney/robust-skills",
+          "use": "DDD + Clean + Hexagonal (règles de dépendance, anti-patterns)"
+        },
+        {
+          "name": "ddd-skills (21 skills : ddd-domain-designer, ddd-event-storming, ddd-architecture-clean/hexagonal/onion/cqrs, ddd-api-designer, ddd-testing-strategist…)",
+          "repo": "full-stack-skills/ddd-skills",
+          "url": "https://skills.sh/full-stack-skills/ddd-skills",
+          "install": "npx skills add full-stack-skills/ddd-skills",
+          "use": "Domain-Driven Design complet (event storming, architectures, tests)"
+        },
+        {
+          "name": "domain-modeling / improve-codebase-architecture / tdd",
+          "repo": "mattpocock/skills",
+          "url": "https://skills.sh/mattpocock/skills",
+          "install": "npx skills add mattpocock/skills",
+          "use": "Modélisation domaine, architecture, TDD"
+        },
+        {
+          "name": "spring-boot-event-driven-patterns",
+          "repo": "giuseppe-trisciuoglio/developer-kit",
+          "url": "https://skills.sh/giuseppe-trisciuoglio/developer-kit/spring-boot-event-driven-patterns",
+          "install": "npx skills add giuseppe-trisciuoglio/developer-kit",
+          "use": "EDA (Kafka, outbox transactionnel, événements de domaine) — si option Java"
+        },
+        {
+          "name": "java-architect / devops-engineer",
+          "repo": "jeffallan/claude-skills",
+          "url": "https://skills.sh/jeffallan/claude-skills",
+          "install": "npx skills add jeffallan/claude-skills",
+          "use": "Spring Boot/Java 21 enterprise (alternative backend) ; DevOps (CI/CD, IaC, K8s, Terraform, GitHub Actions)"
+        }
+      ]
+    },
+    "devops": {
+      "description": "DevOps, CI/CD, déploiement, conteneurisation",
+      "skills": [
+        {
+          "name": "devops-engineer",
+          "repo": "jeffallan/claude-skills",
+          "url": "https://skills.sh/jeffallan/claude-skills/devops-engineer",
+          "install": "npx skills add jeffallan/claude-skills",
+          "use": "CI/CD, IaC, conteneurisation, Kubernetes, GitOps, Terraform, GitHub Actions, runbooks incident"
+        },
+        {
+          "name": "deployment-engineer / docker-expert",
+          "repo": "sickn33/antigravity-awesome-skills",
+          "url": "https://skills.sh/sickn33/antigravity-awesome-skills/deployment-engineer",
+          "install": "npx skills add sickn33/antigravity-awesome-skills",
+          "use": "Pipelines CI/CD, GitOps, stratégies déploiement, Docker (multi-stage, hardening)"
+        },
+        {
+          "name": "github-actions / terraform-aws / kubernetes-ops / container-hardening (via devops-security-agent-skills)",
+          "repo": "bagelhole/devops-security-agent-skills",
+          "url": "https://skills.sh/bagelhole/devops-security-agent-skills",
+          "install": "npx skills add bagelhole/devops-security-agent-skills",
+          "use": "CI GitHub Actions, IaC, K8s ops/hardening"
+        },
+        {
+          "name": "agent-browser",
+          "repo": "vercel-labs/agent-browser",
+          "url": "https://skills.sh/vercel-labs/agent-browser/agent-browser",
+          "install": "npx skills add vercel-labs/agent-browser",
+          "use": "Automatisation navigateur (tests E2E agent)"
+        }
+      ]
+    },
+    "ai-llm": {
+      "description": "Intelligence artificielle : scribe, RAG, agents, prompts (hors flux critique — ADR-009)",
+      "skills": [
+        {
+          "name": "prompt-engineering-patterns",
+          "repo": "wshobson/agents",
+          "url": "https://skills.sh/wshobson/agents/prompt-engineering-patterns",
+          "install": "npx skills add wshobson/agents",
+          "use": "Few-shot, chaîne de pensée, sorties structurées, RAG, caching prompts, monitoring"
+        },
+        {
+          "name": "rag-engineer / rag-implementation / prompt-engineer / prompt-engineering / agent-orchestration-multi-agent-optimize / audio-transcriber / llm-prompt-optimizer",
+          "repo": "sickn33/antigravity-awesome-skills",
+          "url": "https://skills.sh/sickn33/antigravity-awesome-skills/rag-engineer",
+          "install": "npx skills add sickn33/antigravity-awesome-skills",
+          "use": "RAG, prompts, orchestration multi-agents, transcription (scribe IA)"
+        },
+        {
+          "name": "llm-application-dev",
+          "repo": "moizibnyousaf/ai-agent-skills",
+          "url": "https://skills.sh/moizibnyousaf/ai-agent-skills/llm-application-dev",
+          "install": "npx skills add moizibnyousaf/ai-agent-skills",
+          "use": "Développement applications LLM (prompt engineering, RAG, intégration)"
+        },
+        {
+          "name": "superpowers (86 skills : ai-rag-pipeline, llm-models, prompt-engineering…)",
+          "repo": "skills-101/superpowers",
+          "url": "https://skills.sh/skills-101/superpowers",
+          "install": "npx skills add skills-101/superpowers",
+          "use": "Pipelines RAG, modèles LLM, prompting"
+        },
+        {
+          "name": "skill-creator",
+          "repo": "openai/skills",
+          "url": "https://skills.sh/openai/skills/skill-creator",
+          "install": "npx skills add openai/skills",
+          "use": "Créer nos propres skills HospiCore (règles métier, profils FHIR, protocoles de soins, checklist Loi 25)"
+        },
+        {
+          "name": "find-skills",
+          "repo": "vercel-labs/skills",
+          "url": "https://skills.sh/vercel-labs/skills/find-skills",
+          "install": "npx skills add vercel-labs/skills",
+          "use": "Découverte de skills (veille mensuelle)"
+        }
+      ]
+    },
+    "qa-testing-docs": {
+      "description": "Qualité, tests (unitaires/E2E/conformité/a11y/perf) et documentation",
+      "skills": [
+        {
+          "name": "playwright-e2e-testing",
+          "repo": "fugazi/test-automation-skills-agents",
+          "url": "https://skills.sh/fugazi/test-automation-skills-agents/playwright-e2e-testing",
+          "install": "npx skills add fugazi/test-automation-skills-agents",
+          "use": "E2E Playwright (TypeScript) : POM, fixtures, mock API, responsive, visual regression"
+        },
+        {
+          "name": "playwright-skill",
+          "repo": "testdino-hq/playwright-skill",
+          "url": "https://skills.sh/testdino-hq/playwright-skill/playwright-skill",
+          "install": "npx skills add testdino-hq/playwright-skill",
+          "use": "50+ guides Playwright (E2E, API, visuel, a11y, sécurité, CI/CD)"
+        },
+        {
+          "name": "qaskills (59 skills : jest-unit, playwright-e2e, playwright-api, gdpr compliance testing, axe-core accessibility testing, WCAG Accessibility Testing, k6 performance testing, api contract validator, espresso android testing…)",
+          "repo": "pramoddutta/qaskills",
+          "url": "https://skills.sh/pramoddutta/qaskills",
+          "install": "npx skills add pramoddutta/qaskills",
+          "use": "QA complet (conformité GDPR/Loi 25, WCAG, perf k6, contrats API)"
+        },
+        {
+          "name": "specweave (tdd-expert, tdd-workflow, unit-testing-expert, e2e-playwright, qa-lead, device-testing, performance)",
+          "repo": "anton-abyzov/specweave",
+          "url": "https://skills.sh/anton-abyzov/specweave",
+          "install": "npx skills add anton-abyzov/specweave",
+          "use": "TDD, QA lead, E2E, tests devices"
+        },
+        {
+          "name": "documentation (Diátaxis)",
+          "repo": "mcollina/skills",
+          "url": "https://skills.sh/mcollina/skills/documentation",
+          "install": "npx skills add mcollina/skills",
+          "use": "Documentation technique (tutoriels, how-to, référence, explication) — standard de la Bible HospiCore"
+        },
+        {
+          "name": "tdd",
+          "repo": "mattpocock/skills",
+          "url": "https://skills.sh/mattpocock/skills/tdd",
+          "install": "npx skills add mattpocock/skills",
+          "use": "Test-Driven Development"
+        }
+      ]
+    }
+  },
+  "internalSkillsToCreate": [
+    "hospicore-fhir-profiles — profils FHIR HospiCore (Patient QC, Observation LOINC, MedicationRequest DIN)",
+    "hospicore-clinical-rules — règles métier cliniques (alertes allergies/interactions, 5 bons MAR)",
+    "hospicore-loi25-checklist — checklist conformité Loi 25 (consentement, EFVP, droits, incidents)",
+    "hospicore-soap-scribe — protocole scribe IA (génération note SOAP FHIR, révision humaine)",
+    "hospicore-design-tokens — design tokens partagés (Windows/Android/Web)"
+  ]
+}

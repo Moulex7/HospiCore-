@@ -1,0 +1,51 @@
+# Build artifacts
+bin/
+obj/
+out/
+dist/
+build/
+*.user
+*.suo
+.vs/
+.vscode/
+.idea/
+
+# .NET
+*.dll
+*.exe
+*.pdb
+!**/LICENSE
+TestResults/
+
+# Node
+node_modules/
+.next/
+.nuxt/
+.output/
+coverage/
+
+# Android
+.gradle/
+local.properties
+*.apk
+*.aab
+*.ap_
+
+# Secrets & local config (JAMAIS de secrets en git)
+.env
+.env.local
+*.pem
+*.key
+secrets/
+appsettings.*.json
+!appsettings.json
+
+# Données & dumps
+*.sql.gz
+*.dump
+*.sqlite
+*.db
+
+# OS
+.DS_Store
+Thumbs.db
